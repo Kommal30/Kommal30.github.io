@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Open All Links</title>
 </head>
 <body>
 
-<h2>Tap the button to open all 3 links</h2>
+<h3>Tap the button to open all 3 links</h3>
 
-<button id="openLinksBtn">Open 3 Tabs</button>
+<button onclick="openLinks()">Open 3 Tabs</button>
 
 <script>
-document.getElementById("openLinksBtn").addEventListener("click", function () {
+function openLinks() {
 
   const urls = [
     "https://x.com/MoesNiot/status/2006342356065497179?s=20",
@@ -20,22 +19,15 @@ document.getElementById("openLinksBtn").addEventListener("click", function () {
     "https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
   ];
 
-  urls.forEach(url => {
-    const a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  });
+  for (let url of urls) {
+    window.open(url, "_blank");
+  }
 
-  // OPTIONAL: redirect current page AFTER tabs open
+  // redirect ONLY AFTER tabs are opened
   setTimeout(() => {
-    window.location.href = "https://www.google.com";
-  }, 1500);
-
-});
+    location.href = "https://www.google.com";
+  }, 2500);
+}
 </script>
 
 </body>
