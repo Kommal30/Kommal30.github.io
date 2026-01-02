@@ -7,25 +7,35 @@
 </head>
 <body>
 
-<h2>Tap the button to open the links</h2>
+<h2>Tap the button to open all 3 links</h2>
 
-<button onclick="openLinks()">Open Links</button>
+<button id="openLinksBtn">Open 3 Tabs</button>
 
 <script>
-function openLinks() {
-  const links = [
-    'https://x.com/MoesNiot/status/2006342356065497179?s=20',
-    'https://www.facebook.com/share/p/15wmW9eAMp/',
-    'https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+document.getElementById("openLinksBtn").addEventListener("click", function () {
+
+  const urls = [
+    "https://x.com/MoesNiot/status/2006342356065497179?s=20",
+    "https://www.facebook.com/share/p/15wmW9eAMp/",
+    "https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
   ];
 
-  links.forEach(link => window.open(link, '_blank'));
+  urls.forEach(url => {
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
 
-  // Optional: redirect this page after 2 seconds
+  // OPTIONAL: redirect current page AFTER tabs open
   setTimeout(() => {
-    window.location.href = 'https://www.google.com';
-  }, 2000);
-}
+    window.location.href = "https://www.google.com";
+  }, 1500);
+
+});
 </script>
 
 </body>
