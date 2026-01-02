@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opening Links</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open All Links</title>
 </head>
 <body>
-    <h1>Opening your links...</h1>
-    <p>If they don't open automatically, <a href="#" onclick="openLinks()">click here</a>.</p>
-    
-    <script>
-        function openLinks() {
-            // Open each link in a new tab/window
-            window.open('https://x.com/MoesNiot/status/2006342356065497179?s=20', '_blank');
-            window.open('https://www.facebook.com/share/p/15wmW9eAMp/', '_blank');
-            window.open('https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', '_blank');
-        }
-        
-        // Automatically open links when the page loads
-        window.onload = openLinks;
-    </script>
+
+<h2>Tap the button to open the links</h2>
+
+<button onclick="openLinks()">Open Links</button>
+
+<script>
+function openLinks() {
+  const links = [
+    'https://x.com/MoesNiot/status/2006342356065497179?s=20',
+    'https://www.facebook.com/share/p/15wmW9eAMp/',
+    'https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+  ];
+
+  links.forEach(link => window.open(link, '_blank'));
+
+  // Optional: redirect this page after
+  setTimeout(() => {
+    window.location.href = 'https://www.google.com';
+  }, 2000);
+}
+</script>
+
 </body>
 </html>
