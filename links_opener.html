@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Links</title>
+</head>
+<body>
+    <h1>Opening your links...</h1>
+    <p>If they don't open automatically, <a href="#" onclick="openLinks()">click here</a>.</p>
+    
+    <script>
+        function openLinks() {
+            // Open each link in a new tab/window
+            window.open('https://x.com/MoesNiot/status/2006342356065497179?s=20', '_blank');
+            window.open('https://www.facebook.com/share/p/15wmW9eAMp/', '_blank');
+            window.open('https://www.instagram.com/p/DS7YtxRDS7F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', '_blank');
+        }
+        
+        // Automatically open links when the page loads
+        window.onload = openLinks;
+    </script>
+</body>
+</html>
